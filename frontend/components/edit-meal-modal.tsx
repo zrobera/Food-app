@@ -75,8 +75,16 @@ export default function EditMealModal({ isOpen, onClose, onSuccess, food }: Edit
       newErrors.food_rating = "Rating must be a number between 0 and 5"
     }
 
+    if (!formData.food_image.trim()) {
+      newErrors.food_image = "Food image URL is required"
+    }
+
     if (!formData.restaurant_name.trim()) {
       newErrors.restaurant_name = "Restaurant name is required"
+    }
+
+    if (!formData.restaurant_logo.trim()) {
+      newErrors.restaurant_logo = "Restaurant logo URL is required"
     }
 
     if (!formData.price || isNaN(Number(formData.price)) || Number(formData.price) < 0) {
