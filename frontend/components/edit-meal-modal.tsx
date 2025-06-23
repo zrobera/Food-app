@@ -142,7 +142,7 @@ export default function EditMealModal({ isOpen, onClose, onSuccess, food }: Edit
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-md">
+      <DialogContent className="max-w-md max-h-[90vh] my-8 overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-xl font-bold text-orange-500">Edit Meal</DialogTitle>
         </DialogHeader>
