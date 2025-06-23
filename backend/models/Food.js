@@ -27,9 +27,20 @@ const foodSchema = new mongoose.Schema(
       trim: true,
     },
     restaurant: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Restaurant',
-      required: [true, 'Restaurant is required'],
+      name: {
+        type: String,
+        required: [true, 'Restaurant name is required'],
+        trim: true,
+      },
+      logo: {
+        type: String,
+        required: [true, 'Restaurant logo URL is required'],
+      },
+      status: {
+        type: String,
+        enum: ['Open Now', 'Closed'],
+        required: [true, 'Restaurant status is required'],
+      },
     },
   },
   {
@@ -38,7 +49,7 @@ const foodSchema = new mongoose.Schema(
 );
 
 // Create a text index for search functionality
-foodSchema.index({ name: 'text', description: 'text' });
+foodSchema.index({ name: 'text', description: 'text', 'restaurant.name': 'text' });
 
 const Food = mongoose.model('Food', foodSchema);
 
