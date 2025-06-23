@@ -1,3 +1,10 @@
+### Development Path
+
+This project integrates both Path A and Path B approaches:
+
+- **Path A**: Focused on developing a robust backend API with Express.js and MongoDB, with proper structure, validation, and error handling.
+- **Path B**: Added a modern frontend using Next.js with components for displaying, searching, and managing food items.
+
 # FoodHaven - Food Delivery App
 
 A full-stack food delivery application with a Node.js/Express backend API and Next.js frontend.
